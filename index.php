@@ -14,5 +14,4 @@ if (have_posts()) :
 else :
     echo '<p>Nenhum conteúdo encontrado.</p>';
 endif;
-
 get_footer();
