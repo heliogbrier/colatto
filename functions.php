@@ -19,3 +19,14 @@ function colatto_setup() {
 }
 
 add_action('after_setup_theme', 'colatto_setup');
+
+function colatto_enqueue_assets() {
+    wp_enqueue_style(
+        'colatto',
+        get_template_directory_uri() . '/assets/css/output.css',
+        [],
+        wp_get_theme()->get('Version')
+    );
+}
+
+add_action('wp_enqueue_scripts', 'colatto_enqueue_assets');
