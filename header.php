@@ -11,7 +11,9 @@
     <div class="py-6">
         <div class="flex justify-between items-center px-6">
             <div>
-                <a href="">logo</a>
+                <a href="">
+                    <img class="w-40 h-auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="">
+                </a>
             </div>
             <div>
                 <?php
