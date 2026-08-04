@@ -4,130 +4,156 @@
  */
 
 get_header();
+
+$founded_year = 1990;
+$years_active = (int) current_time('Y') - $founded_year;
+
+$advogados = [
+    ['nome' => 'Ana Cláudia Colatto',   'oab' => 'OAB/SC 7.137'],
+    ['nome' => 'Ruthe Calado Schmitt',  'oab' => 'OAB/SC 61.848'],
+    ['nome' => 'Renato José Thiesen',   'oab' => 'OAB/SC 44.212'],
+    ['nome' => 'Maria Cláudia Colatto', 'oab' => 'OAB/SC 79.013'],
+];
+$advogado_foto = get_template_directory_uri() . '/assets/images/06.png';
+
+// Preencha com o número em formato internacional (ex.: '5548999999999') para
+// ativar os links diretos do WhatsApp. Enquanto vazio, os botões levam à seção de contato.
+$whatsapp_number  = '';
+$whatsapp_message = rawurlencode('Olá! Gostaria de falar com um advogado da Colatto Advogados.');
+$whatsapp_link    = $whatsapp_number ? 'https://wa.me/' . $whatsapp_number . '?text=' . $whatsapp_message : '#contato';
+
+$areas_atuacao = new WP_Query([
+    'category_name'  => 'areas-de-atuacao',
+    'posts_per_page' => -1,
+    'orderby'        => 'ID',
+    'order'          => 'ASC',
+]);
+$areas_count = $areas_atuacao->found_posts;
+
+$focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a6824f]';
 ?>
-<section id="inicio" class="py-4 px-4 md:py-18 md:px-20 bg-[#ded8cc]">
-    <div class="flex gap-9.5 flex-col items-center md:min-h-100">
-        <h1 class="text-xl md:text-[106px] leading-[1.038em] font-normal">
-        We are a fine architecture firm in New York
+<section id="inicio" class="bg-[#f7f4ee] px-6 py-20 md:px-20 md:py-32">
+    <div class="mx-auto flex max-w-6xl flex-col gap-10">
+        <div class="flex items-center gap-3 animate-fade-up">
+            <span class="h-1.5 w-1.5 rotate-45 bg-[#a6824f]" aria-hidden="true"></span>
+            <p class="font-sans text-xs font-semibold uppercase tracking-[0.28em] text-[#6b5636]">Colatto Advogados &middot; Desde <?php echo esc_html($founded_year); ?></p>
+        </div>
+
+        <h1 class="max-w-4xl font-display text-4xl font-light leading-[1.1] tracking-tight text-[#20341f] sm:text-6xl md:text-7xl animate-fade-up [animation-delay:100ms]">
+            Orientação jurídica sólida para decisões que <em class="italic text-[#a6824f]">não podem esperar</em>.
         </h1>
-       <div class="flex justify-between w-full">
-            <div class="w-full md:w-2/3 flex flex-col gap-8.25">
-                <p class="text-[24px] leading-[1.583em] md:w-197.25">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit netus praesent eu orci, volutpat vel proin mattis id suspendisse vel egestas.
-                </p>
-                <div class="flex flex-col md:flex-row items-center gap-4">
-                    <a href="" class="flex gap-2 px-14 items-center h-14 w-full md:w-auto bg-[#20341f] rounded-full text-white text-[20px] pt-5.5 pb-6 font-medium">
-                        <i class="fa fa-whatsapp text-xl"></i>
-                        <span>Fale conosco</span>  
-                    </a>
-                    <a href="" class="flex gap-2 items-center h-14 w-full md:w-auto bg-[#ded8cc] border-2 border-[#20341f] rounded-full px-14 pt-5.5 pb-6 text-[20px] font-medium">
-                        <span>Áreas de Atuação</span>  
-                    </a>
-                </div>
-            </div>
-            <div class="md:flex justify-end hidden">
-                <div class="flex items-center justify-center rounded-full border w-24 h-24">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-down-icon lucide-move-down"><path d="M8 18L12 22L16 18"/><path d="M12 2V22"/></svg>
-                </div>
-            </div>
-       </div>
-    </div>
-</section>
-<section id="escritorio" class="py-4 md:py-18 px-4 md:px-18 bg-[#20341f]">
-    <div class="flex flex-col gap-8">
-        <div class="flex flex-col gap-9">
-            <h1 class="text-[#ded8cc] text-[48px] font-medium">O Escritório </h1>
-            <div class="flex flex-col gap-4">
-            <p class="text-[#ded8cc] md:text-[18px] md:leading-[1.667em] text-justify">
-            Inaugurado em 1990, o escritório Colatto Advogados tem o propósito de oferecer assessoria jurídica estratégica, pautada pela excelência técnica, ética profissional e atendimento personalizado. Nossa atuação é voltada à construção de soluções jurídicas seguras e eficazes, tanto na esfera judicial quanto na extrajudicial. 
-            </p>
-            <p class="text-[#ded8cc] md:text-[18px] md:leading-[1.667em] text-justify"">
-            Nossa equipe é formada por profissionais comprometidos com o constante aperfeiçoamento acadêmico e profissional, buscando atualização permanente por meio de cursos de especialização, capacitações e estudos aprofundados nas diversas áreas do Direito. Esta combinação entre conhecimento técnico e experiência prática permite a elaboração de estratégias sólidas, sem abrir mão da agilidade e da eficiência exigidas pelo ambiente jurídico contemporâneo. 
-            </p>
-            </div>
-        </div>
-        <div id="advogados" class="grid md:grid-cols-4 py-12 md:divide-x md:divide-white/10">
-            <div>
-               <div class="max-h-101 overflow-x-hidden md:px-4">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/06.png" alt="">
-               </div> 
-               <div class="py-8 px-12 flex flex-col gap-4">
-                    <h2 class="text-[#ded8cc] text-4xl">Ana Cláudia Colatto</h2>
-                    <p class="text-[#ded8cc]">OAB/SC 7.137 </p>
-               </div>
-            </div>
-            <div>
-               <div class="max-h-101 overflow-x-hidden md:px-4">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/06.png" alt="">
-               </div> 
-               <div class="py-8 px-12 flex flex-col gap-4">
-                    <h2 class="text-[#ded8cc] text-4xl">Ruthe Calado Schmitt</h2>
-                    <p class="text-[#ded8cc]">OAB/SC 61848</p>
-               </div>
-            </div>
-            <div>
-               <div class="max-h-101 overflow-x-hidden md:px-4">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/06.png" alt="">
-               </div> 
-               <div class="py-8 px-12 flex flex-col gap-4">
-                    <h2 class="text-[#ded8cc] text-4xl">Renato José Thiesen</h2>
-                    <p class="text-[#ded8cc]">OAB/SC 44212</p>
-               </div>
-            </div>
-            <div>
-               <div class="max-h-101 overflow-x-hidden md:px-4">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/06.png" alt="">
-               </div> 
-               <div class="py-8 px-12 flex flex-col gap-4">
-                    <h2 class="text-[#ded8cc] text-4xl">Maria Cláudia Colatto </h2>
-                    <p class="text-[#ded8cc]">OAB/SC 79.013 </p>
-               </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="atuacao" class="bg-white px-4 md:px-20">
-    <div>
-        <h2>Áreas de Atuação</h2>
-    </div>
-    <div class="accordion divide-y">
-        <?php
-        $areas_atuacao = new WP_Query([
-            'category_name'  => 'areas-de-atuacao',
-            'posts_per_page' => -1,
-            'orderby'        => 'ID',
-            'order'          => 'ASC',
-        ]);
 
-        while ($areas_atuacao->have_posts()) :
-            $areas_atuacao->the_post();
-        ?>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold"><?php the_title(); ?></h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-                </div>
-            </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                <?php the_content(); ?>
-                </p>
+        <div class="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+            <p class="max-w-xl font-sans text-lg leading-relaxed text-[#3a4a37] md:text-xl animate-fade-up [animation-delay:200ms]">
+                Há mais de três décadas unimos rigor técnico, ética profissional e atendimento próximo para conduzir sua causa com segurança — da orientação preventiva ao litígio.
+            </p>
+
+            <div class="flex w-full flex-col gap-4 sm:flex-row md:w-auto animate-fade-up [animation-delay:300ms]">
+                <a href="<?php echo esc_url($whatsapp_link); ?>" class="flex h-14 items-center justify-center gap-2 rounded-full bg-[#20341f] px-10 text-base font-medium text-white transition hover:bg-[#182a17] <?php echo $focus_ring; ?>">
+                    <i class="fa fa-whatsapp text-lg" aria-hidden="true"></i>
+                    <span>Falar com um advogado</span>
+                </a>
+                <a href="#atuacao" class="flex h-14 items-center justify-center gap-2 rounded-full border-2 border-[#20341f]/25 px-10 text-base font-medium text-[#20341f] transition hover:border-[#20341f] <?php echo $focus_ring; ?>">
+                    <span>Áreas de atuação</span>
+                </a>
             </div>
         </div>
-        <?php
-        endwhile;
-        wp_reset_postdata();
-        ?>
     </div>
 </section>
-<section id="noticias" class="px-4 md:px-20 py-4 md:py-18 flex flex-col gap-6">
-    <div class="">
-        <h2 class="text-5xl text-center">Notícias</h2>
-        <p class="text-center">Conteúdo atualizado sobre legislação, jurisprudência e os principais acontecimentos do universo jurídico.</p>
-    </div>
 
-    <div class="grid  grid-cols-1 md:grid-cols-3 gap-4 gap-y-12">
+<section id="escritorio" class="bg-[#20341f] px-6 py-20 md:px-20 md:py-28">
+    <div class="mx-auto max-w-6xl">
+        <div class="grid gap-16 md:grid-cols-[1fr_auto] md:items-start">
+            <div class="flex flex-col gap-8">
+                <div class="flex items-center gap-3">
+                    <span class="h-1.5 w-1.5 rotate-45 bg-[#a6824f]" aria-hidden="true"></span>
+                    <p class="font-sans text-xs font-semibold uppercase tracking-[0.28em] text-[#ded8cc]/70">Sobre nós</p>
+                </div>
+                <h2 class="font-display text-3xl font-light text-[#ded8cc] sm:text-5xl">O Escritório</h2>
+                <div class="flex max-w-2xl flex-col gap-5 font-sans text-base leading-relaxed text-[#ded8cc]/85 md:text-lg">
+                    <p>Inaugurado em <?php echo esc_html($founded_year); ?>, o escritório Colatto Advogados tem o propósito de oferecer assessoria jurídica estratégica, pautada pela excelência técnica, ética profissional e atendimento personalizado. Nossa atuação é voltada à construção de soluções jurídicas seguras e eficazes, tanto na esfera judicial quanto na extrajudicial.</p>
+                    <p>Nossa equipe é formada por profissionais comprometidos com o constante aperfeiçoamento acadêmico, buscando atualização permanente por meio de cursos de especialização e estudos aprofundados nas diversas áreas do Direito — uma combinação entre conhecimento técnico e experiência prática que permite estratégias sólidas, ágeis e eficientes.</p>
+                </div>
+            </div>
+            <div class="hidden select-none font-display text-[9rem] font-light leading-none text-[#ded8cc]/10 md:block" aria-hidden="true">
+                <?php echo esc_html($founded_year); ?>
+            </div>
+        </div>
+
+        <div id="advogados" class="mt-16 grid gap-px overflow-hidden rounded-2xl bg-[#ded8cc]/10 sm:grid-cols-2 md:mt-20 md:grid-cols-4">
+            <?php foreach ($advogados as $advogado) : ?>
+            <div class="flex flex-col bg-[#20341f]">
+                <div class="aspect-square overflow-hidden">
+                    <img src="<?php echo esc_url($advogado_foto); ?>" alt="<?php echo esc_attr($advogado['nome']); ?>" class="h-full w-full object-cover grayscale transition duration-500 hover:grayscale-0" loading="lazy" width="808" height="808">
+                </div>
+                <div class="flex flex-1 flex-col justify-center gap-1 px-6 py-6">
+                    <h3 class="font-display text-xl text-[#ded8cc]"><?php echo esc_html($advogado['nome']); ?></h3>
+                    <p class="font-sans text-sm text-[#ded8cc]/60"><?php echo esc_html($advogado['oab']); ?></p>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<section id="atuacao" class="bg-[#f7f4ee] px-6 py-20 md:px-20 md:py-28">
+    <div class="mx-auto max-w-6xl">
+        <div class="flex flex-col gap-6 border-b border-[#20341f]/10 pb-10 md:flex-row md:items-end md:justify-between">
+            <div class="flex max-w-xl flex-col gap-4">
+                <div class="flex items-center gap-3">
+                    <span class="h-1.5 w-1.5 rotate-45 bg-[#a6824f]" aria-hidden="true"></span>
+                    <p class="font-sans text-xs font-semibold uppercase tracking-[0.28em] text-[#6b5636]">Especialidades</p>
+                </div>
+                <h2 class="font-display text-3xl font-light text-[#20341f] sm:text-5xl">Áreas de Atuação</h2>
+            </div>
+            <p class="max-w-sm font-sans text-base leading-relaxed text-[#3a4a37]">Soluções jurídicas completas, com atuação consultiva e contenciosa para pessoas físicas e empresas.</p>
+        </div>
+
+        <div class="accordion divide-y divide-[#20341f]/10">
+            <?php
+            $i = 1;
+            while ($areas_atuacao->have_posts()) :
+                $areas_atuacao->the_post();
+            ?>
+            <div class="accordion-item flex flex-col py-7">
+                <button type="button" class="accordion-trigger group flex w-full cursor-pointer items-center justify-between gap-6 border-0 bg-transparent p-0 text-left <?php echo $focus_ring; ?>">
+                    <span class="flex items-center gap-5">
+                        <span class="w-9 shrink-0 font-display text-lg font-light text-[#a6824f]"><?php echo esc_html(str_pad((string) $i, 2, '0', STR_PAD_LEFT)); ?></span>
+                        <span class="font-display text-xl text-[#20341f] sm:text-2xl"><?php the_title(); ?></span>
+                    </span>
+                    <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#20341f]/20 transition group-hover:border-[#20341f]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </span>
+                </button>
+                <div class="accordion-content">
+                    <div class="flex gap-5 pt-5">
+                        <span class="w-9 shrink-0" aria-hidden="true"></span>
+                        <div class="max-w-2xl font-sans text-base leading-relaxed text-[#3a4a37]">
+                            <?php the_content(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+            $i++;
+            endwhile;
+            wp_reset_postdata();
+            ?>
+        </div>
+    </div>
+</section>
+
+<section id="noticias" class="bg-white px-6 py-20 md:px-20 md:py-28">
+    <div class="mx-auto max-w-6xl">
+        <div class="flex flex-col items-center gap-4 text-center">
+            <div class="flex items-center gap-3">
+                <span class="h-1.5 w-1.5 rotate-45 bg-[#a6824f]" aria-hidden="true"></span>
+                <p class="font-sans text-xs font-semibold uppercase tracking-[0.28em] text-[#6b5636]">Conteúdo jurídico</p>
+            </div>
+            <h2 class="font-display text-3xl font-light text-[#20341f] sm:text-5xl">Notícias</h2>
+            <p class="max-w-xl font-sans text-base leading-relaxed text-[#3a4a37]">Conteúdo atualizado sobre legislação, jurisprudência e os principais acontecimentos do universo jurídico.</p>
+        </div>
+
         <?php
         $noticias = new WP_Query([
             'category_name'  => 'noticias',
@@ -135,42 +161,45 @@ get_header();
             'orderby'        => 'ID',
             'order'          => 'DESC',
         ]);
+        ?>
 
-        while ($noticias->have_posts()) :
-            $noticias->the_post();
-        ?>
-        <div class="flex flex-col justify-between gap-4">
-            <div class="flex-1 flex flex-col gap-4">
-                <h3 class="text-2xl font-bold"><?php the_title(); ?></h3>
-                <div>
-                <?php the_excerpt(); ?>
-                </div>
-            </div>
-            <div>
-                <a href="<?php the_permalink(); ?>">Continuar lendo…</a>
-            </div>
+        <?php if ($noticias->have_posts()) : ?>
+        <div class="mt-14 grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-3">
+            <?php while ($noticias->have_posts()) : $noticias->the_post(); ?>
+            <article class="flex flex-col gap-4">
+                <p class="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-[#a6824f]"><?php echo esc_html(get_the_date()); ?></p>
+                <h3 class="font-display text-2xl leading-snug text-[#20341f]">
+                    <a href="<?php the_permalink(); ?>" class="transition hover:text-[#a6824f] <?php echo $focus_ring; ?>"><?php the_title(); ?></a>
+                </h3>
+                <div class="font-sans text-base leading-relaxed text-[#3a4a37]"><?php the_excerpt(); ?></div>
+                <a href="<?php the_permalink(); ?>" class="mt-1 inline-flex w-fit items-center gap-2 font-sans text-sm font-semibold text-[#20341f] underline decoration-[#a6824f]/40 decoration-2 underline-offset-4 transition hover:decoration-[#a6824f] <?php echo $focus_ring; ?>">
+                    Continuar lendo
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+            </article>
+            <?php endwhile; ?>
         </div>
-        <?php
-        endwhile;
-        wp_reset_postdata();
-        ?>
+        <?php else : ?>
+        <p class="mt-14 text-center font-sans text-[#3a4a37]">Em breve, novidades por aqui.</p>
+        <?php endif; ?>
+        <?php wp_reset_postdata(); ?>
     </div>
 </section>
-<section id="contato" class="px-4 md:px-20 py-18 flex items-center justify-between flex-col md:flex-row gap-6 bg-black">
-<div>
-    <p class="text-white">Endereço: Rua dos Ilhéus, n. 38, sala 1.204, Centro, <br /> Florianópolis/SC, CEP 88010-560</p>
-</div>
-<div class="flex gap-6 md:gap-0 flex-col md:flex-row w-full md:w-1/2 items-center md:justify-between md:border-b md:border-white pb-6">
-   <div class="text-white text-xl">
-    heliogbrier@gmail.com
-   </div>
-   <div>
-    <a href="" class="flex gap-2 items-center w-full md:w-auto h-14 bg-white rounded-full px-14">
-        <i class="fa fa-whatsapp text-xl"></i>
-        <span>Fale conosco</span>  
-    </a>
-   </div>
-</div>
+
+<section id="contato" class="bg-[#20341f] px-6 py-20 md:px-20 md:py-24">
+    <div class="mx-auto flex max-w-6xl flex-col gap-12 md:flex-row md:items-end md:justify-between">
+        <div class="flex flex-col gap-6">
+            <h2 class="font-display text-3xl font-light text-[#ded8cc] sm:text-4xl">Vamos conversar sobre o seu caso?</h2>
+            <div class="flex flex-col gap-3 font-sans text-base text-[#ded8cc]/80">
+                <p>Rua dos Ilhéus, n. 38, sala 1.204, Centro<br>Florianópolis/SC, CEP 88010-560</p>
+                <a href="mailto:heliogbrier@gmail.com" class="w-fit transition hover:text-white <?php echo $focus_ring; ?>">heliogbrier@gmail.com</a>
+            </div>
+        </div>
+        <a href="<?php echo esc_url($whatsapp_link); ?>" class="flex h-14 w-full items-center justify-center gap-2 rounded-full bg-[#ded8cc] px-10 text-base font-medium text-[#20341f] transition hover:bg-white <?php echo $focus_ring; ?> md:w-auto">
+            <i class="fa fa-whatsapp text-lg" aria-hidden="true"></i>
+            <span>Fale conosco</span>
+        </a>
+    </div>
 </section>
 <?php
 get_footer();
