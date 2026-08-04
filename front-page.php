@@ -74,7 +74,7 @@ get_header();
         <h2>Áreas de Atuação</h2>
     </div>
     <div class="accordion divide-y">
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">TRIBUNAIS E SUSTENTAÇÃO ORAL</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -82,10 +82,12 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Atuação estratégica perante Tribunais de Justiça, Tribunais Regionais e Tribunais Superiores, com elaboração de recursos, memoriais, despachos com magistrados e sustentações orais em processos de alta complexidade e relevância.
+                <p class="pt-4">
+                Atuação estratégica perante Tribunais de Justiça, Tribunais Regionais e Tribunais Superiores, com elaboração de recursos, memoriais, despachos com magistrados e sustentações orais em processos de alta complexidade e relevância.
+                </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">DIREITO CIVIL</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -93,10 +95,12 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Atuação consultiva e contenciosa em questões contratuais, responsabilidade civil, obrigações, direitos reais, indenizações, cobranças, conflitos patrimoniais e demandas judiciais e extrajudiciais em geral.
+                <p class="pt-4">
+                Atuação consultiva e contenciosa em questões contratuais, responsabilidade civil, obrigações, direitos reais, indenizações, cobranças, conflitos patrimoniais e demandas judiciais e extrajudiciais em geral.
+                </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">DIREITO ADMINISTRATIVO</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -104,10 +108,12 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Assessoria e representação em processos administrativos, licitações, contratos públicos, concursos, responsabilização de agentes públicos, regularizações e demandas envolvendo a Administração Pública nas esferas municipal, estadual e federal.
+                <p class="pt-4">
+                Assessoria e representação em processos administrativos, licitações, contratos públicos, concursos, responsabilização de agentes públicos, regularizações e demandas envolvendo a Administração Pública nas esferas municipal, estadual e federal.
+                </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">DIREITO MILITAR</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -115,10 +121,12 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Atuação na defesa dos interesses de militares estaduais e federais, em processos administrativos disciplinares, conselhos de disciplina, processos judiciais militares, promoções, transferências e questões funcionais.
+                <p class="pt-4">
+                Atuação na defesa dos interesses de militares estaduais e federais, em processos administrativos disciplinares, conselhos de disciplina, processos judiciais militares, promoções, transferências e questões funcionais.
+                </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">DIREITO CONSTITUCIONAL</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -126,10 +134,12 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Atuação em demandas relacionadas à proteção de direitos e garantias fundamentais, controle de legalidade e constitucionalidade, mandados de segurança, ações constitucionais e questões envolvendo a relação entre o cidadão e o Estado.
+                <p class="pt-4">
+                Atuação em demandas relacionadas à proteção de direitos e garantias fundamentais, controle de legalidade e constitucionalidade, mandados de segurança, ações constitucionais e questões envolvendo a relação entre o cidadão e o Estado.
+                </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">DIREITO DE FAMÍLIA</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -137,10 +147,12 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Assessoria jurídica em divórcios, dissolução de união estável, guarda, convivência, alimentos, reconhecimento de parentalidade e demais questões familiares, sempre com atuação técnica e sensível às particularidades de cada caso.
+                <p class="pt-4">
+                Assessoria jurídica em divórcios, dissolução de união estável, guarda, convivência, alimentos, reconhecimento de parentalidade e demais questões familiares, sempre com atuação técnica e sensível às particularidades de cada caso.
+                </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">DIREITO DAS SUCESSÕES</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -148,10 +160,12 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Planejamento sucessório, inventários judiciais e extrajudiciais, partilhas, testamentos, doações e estruturação patrimonial voltada à preservação e organização do patrimônio familiar.
+                <p class="pt-4">
+                Planejamento sucessório, inventários judiciais e extrajudiciais, partilhas, testamentos, doações e estruturação patrimonial voltada à preservação e organização do patrimônio familiar.
+                </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">DIREITO PREVIDENCIÁRIO</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -159,10 +173,12 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Atuação administrativa e judicial na obtenção, revisão e restabelecimento de benefícios previdenciários, aposentadorias, pensões, benefícios por incapacidade e demais direitos perante os regimes previdenciários.
+                <p class="pt-4">
+                Atuação administrativa e judicial na obtenção, revisão e restabelecimento de benefícios previdenciários, aposentadorias, pensões, benefícios por incapacidade e demais direitos perante os regimes previdenciários.
+                </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">DIREITO MÉDICO E DA SAÚDE</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -170,10 +186,12 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Assessoria a médicos, clínicas, hospitais e demais profissionais da saúde, abrangendo consultoria preventiva, processos éticos, responsabilidade civil médica e demandas judiciais e administrativas do setor.
+                <p class="pt-4">
+                Assessoria a médicos, clínicas, hospitais e demais profissionais da saúde, abrangendo consultoria preventiva, processos éticos, responsabilidade civil médica e demandas judiciais e administrativas do setor.
+                </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">DIREITO INTERNACIONAL</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -181,10 +199,12 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Assessoria em questões jurídicas transnacionais, contratos internacionais, homologação de decisões estrangeiras, reconhecimento de documentos, conflitos de leis e apoio jurídico a pessoas físicas e empresas com interesses no exterior. 
+                <p class="pt-4">
+                Assessoria em questões jurídicas transnacionais, contratos internacionais, homologação de decisões estrangeiras, reconhecimento de documentos, conflitos de leis e apoio jurídico a pessoas físicas e empresas com interesses no exterior. 
+                </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col gap-4">
+        <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
                 <h3 class="text-2xl font-bold">CIDADANIA ITALIANA</h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
@@ -192,7 +212,9 @@ get_header();
                 </div>
             </div>
             <div class="accordion-content">
-            Assessoria em pedidos de reconhecimento da cidadania italiana pelas vias administrativa, consular e judicial, incluindo análise documental, retificação de registros, apostilamento, traduções, transcrições e atualização no AIRE.
+                <p class="pt-4">
+                Assessoria em pedidos de reconhecimento da cidadania italiana pelas vias administrativa, consular e judicial, incluindo análise documental, retificação de registros, apostilamento, traduções, transcrições e atualização no AIRE.
+                </p>
             </div>
         </div>
     </div>
