@@ -187,6 +187,12 @@
   .collapse {
     visibility: collapse;
   }
+  .visible {
+    visibility: visible;
+  }
+  .relative {
+    position: relative;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -204,6 +210,9 @@
     @media (width >= 96rem) {
       max-width: 96rem;
     }
+  }
+  .contents {
+    display: contents;
   }
   .flex {
     display: flex;
