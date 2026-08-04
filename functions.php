@@ -1,5 +1,15 @@
 <?php
 
+define('COLATTO_DEV', defined('WP_DEBUG') && WP_DEBUG);
+
+function colatto_asset_version($relative_path) {
+    if (COLATTO_DEV) {
+        return filemtime(get_template_directory() . $relative_path);
+    }
+
+    return wp_get_theme()->get('Version');
+}
+
 function colatto_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
@@ -25,14 +35,14 @@ function colatto_enqueue_assets() {
         'colatto',
         get_template_directory_uri() . '/assets/css/output.css',
         [],
-        wp_get_theme()->get('Version')
+        colatto_asset_version('/assets/css/output.css')
     );
 
     wp_enqueue_script(
         'colatto',
         get_template_directory_uri() . '/assets/js/app.js',
         [],
-        wp_get_theme()->get('Version'),
+        colatto_asset_version('/assets/js/app.js'),
         true
     );
 }

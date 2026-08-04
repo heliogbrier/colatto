@@ -74,153 +74,110 @@ get_header();
         <h2>Áreas de Atuação</h2>
     </div>
     <div class="accordion divide-y">
+        <?php
+        $areas_atuacao = new WP_Query([
+            'category_name'  => 'areas-de-atuacao',
+            'posts_per_page' => -1,
+            'orderby'        => 'ID',
+            'order'          => 'ASC',
+        ]);
+
+        while ($areas_atuacao->have_posts()) :
+            $areas_atuacao->the_post();
+        ?>
         <div class="accordion-item py-6 flex flex-col">
             <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">TRIBUNAIS E SUSTENTAÇÃO ORAL</h3>
+                <h3 class="text-2xl font-bold"><?php the_title(); ?></h3>
                 <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
                 </div>
             </div>
             <div class="accordion-content">
                 <p class="pt-4">
-                Atuação estratégica perante Tribunais de Justiça, Tribunais Regionais e Tribunais Superiores, com elaboração de recursos, memoriais, despachos com magistrados e sustentações orais em processos de alta complexidade e relevância.
+                <?php the_content(); ?>
                 </p>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">DIREITO CIVIL</h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+        <?php
+        endwhile;
+        wp_reset_postdata();
+        ?>
+    </div>
+</section>
+<section class="px-20 py-18 flex flex-col gap-6">
+    <div class="">
+        <h2 class="text-5xl text-center">Notícias</h2>
+        <p class="text-center">Conteúdo atualizado sobre legislação, jurisprudência e os principais acontecimentos do universo jurídico.</p>
+    </div>
+
+    <div class="grid  grid-cols-1 md:grid-cols-3 gap-4 gap-y-12">
+        <div class="flex flex-col gap-4">
+            <div>
+                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
+                <div>
+                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
                 </div>
             </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                Atuação consultiva e contenciosa em questões contratuais, responsabilidade civil, obrigações, direitos reais, indenizações, cobranças, conflitos patrimoniais e demandas judiciais e extrajudiciais em geral.
-                </p>
+            <div>
+                <a href="">Continuar lendo…</a>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">DIREITO ADMINISTRATIVO</h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+        <div class="flex flex-col gap-4">
+            <div>
+                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
+                <div>
+                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
                 </div>
             </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                Assessoria e representação em processos administrativos, licitações, contratos públicos, concursos, responsabilização de agentes públicos, regularizações e demandas envolvendo a Administração Pública nas esferas municipal, estadual e federal.
-                </p>
+            <div>
+                <a href="">Continuar lendo…</a>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">DIREITO MILITAR</h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+        <div class="flex flex-col gap-4">
+            <div>
+                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
+                <div>
+                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
                 </div>
             </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                Atuação na defesa dos interesses de militares estaduais e federais, em processos administrativos disciplinares, conselhos de disciplina, processos judiciais militares, promoções, transferências e questões funcionais.
-                </p>
+            <div>
+                <a href="">Continuar lendo…</a>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">DIREITO CONSTITUCIONAL</h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+        <div class="flex flex-col gap-4">
+            <div>
+                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
+                <div>
+                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
                 </div>
             </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                Atuação em demandas relacionadas à proteção de direitos e garantias fundamentais, controle de legalidade e constitucionalidade, mandados de segurança, ações constitucionais e questões envolvendo a relação entre o cidadão e o Estado.
-                </p>
+            <div>
+                <a href="">Continuar lendo…</a>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">DIREITO DE FAMÍLIA</h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+        <div class="flex flex-col gap-4">
+            <div>
+                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
+                <div>
+                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
                 </div>
             </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                Assessoria jurídica em divórcios, dissolução de união estável, guarda, convivência, alimentos, reconhecimento de parentalidade e demais questões familiares, sempre com atuação técnica e sensível às particularidades de cada caso.
-                </p>
+            <div>
+                <a href="">Continuar lendo…</a>
             </div>
         </div>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">DIREITO DAS SUCESSÕES</h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+        <div class="flex flex-col gap-4">
+            <div>
+                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
+                <div>
+                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
                 </div>
             </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                Planejamento sucessório, inventários judiciais e extrajudiciais, partilhas, testamentos, doações e estruturação patrimonial voltada à preservação e organização do patrimônio familiar.
-                </p>
-            </div>
-        </div>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">DIREITO PREVIDENCIÁRIO</h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-                </div>
-            </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                Atuação administrativa e judicial na obtenção, revisão e restabelecimento de benefícios previdenciários, aposentadorias, pensões, benefícios por incapacidade e demais direitos perante os regimes previdenciários.
-                </p>
-            </div>
-        </div>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">DIREITO MÉDICO E DA SAÚDE</h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-                </div>
-            </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                Assessoria a médicos, clínicas, hospitais e demais profissionais da saúde, abrangendo consultoria preventiva, processos éticos, responsabilidade civil médica e demandas judiciais e administrativas do setor.
-                </p>
-            </div>
-        </div>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">DIREITO INTERNACIONAL</h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-                </div>
-            </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                Assessoria em questões jurídicas transnacionais, contratos internacionais, homologação de decisões estrangeiras, reconhecimento de documentos, conflitos de leis e apoio jurídico a pessoas físicas e empresas com interesses no exterior. 
-                </p>
-            </div>
-        </div>
-        <div class="accordion-item py-6 flex flex-col">
-            <div class="accordion-trigger flex justify-between items-center">
-                <h3 class="text-2xl font-bold">CIDADANIA ITALIANA</h3>
-                <div class="rounded-full border border-[#1f361f] h-10 w-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-                </div>
-            </div>
-            <div class="accordion-content">
-                <p class="pt-4">
-                Assessoria em pedidos de reconhecimento da cidadania italiana pelas vias administrativa, consular e judicial, incluindo análise documental, retificação de registros, apostilamento, traduções, transcrições e atualização no AIRE.
-                </p>
+            <div>
+                <a href="">Continuar lendo…</a>
             </div>
         </div>
     </div>
-</section>
-<section class="">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/02.png" alt="">
 </section>
 <section class="">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/03.png" alt="">
