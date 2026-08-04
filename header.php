@@ -25,8 +25,5 @@
                     ]);
                 ?>
             </div>
-            <div>
-                <a href="">Fale cosnoco</a>
-            </div>
         </div>
     </div>

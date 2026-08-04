@@ -5,17 +5,32 @@
 
 get_header();
 ?>
-<section class="">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/07.png" alt="">
-</section>
-<section class="py-6 px-6">
-    <div class="flex flex-col items-center md:min-h-100">
+<section class="py-18 px-20 bg-[#ded8cc]">
+    <div class="flex gap-6 flex-col items-center md:min-h-100">
         <h1 class="text-[106px] ">
         We are a fine architecture firm in New York
         </h1>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit netus praesent eu orci, volutpat vel proin mattis id suspendisse vel egestas.
-        </p>
+       <div class="flex justify-between w-full">
+            <div class="w-2/3 flex flex-col gap-6">
+                <p class="text-2xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit netus praesent eu orci, volutpat vel proin mattis id suspendisse vel egestas.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="" class="flex gap-2 items-center h-14 bg-[#20341f] rounded-full px-14 text-white">
+                        <i class="fa fa-whatsapp text-xl"></i>
+                        <span>Fale conosco</span>  
+                    </a>
+                    <a href="" class="flex gap-2 items-center h-14 bg-[#ded8cc] border-2 border-[#20341f] rounded-full px-14">
+                        <span>Áreas de Atuação</span>  
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <div class="flex items-center justify-center rounded-full border w-24 h-24">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-down-icon lucide-move-down"><path d="M8 18L12 22L16 18"/><path d="M12 2V22"/></svg>
+                </div>
+            </div>
+       </div>
     </div>
 </section>
 <section class="py-18 px-18 bg-[#20341f]">
@@ -111,76 +126,49 @@ get_header();
     </div>
 
     <div class="grid  grid-cols-1 md:grid-cols-3 gap-4 gap-y-12">
-        <div class="flex flex-col gap-4">
-            <div>
-                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
+        <?php
+        $noticias = new WP_Query([
+            'category_name'  => 'noticias',
+            'posts_per_page' => 6,
+            'orderby'        => 'ID',
+            'order'          => 'DESC',
+        ]);
+
+        while ($noticias->have_posts()) :
+            $noticias->the_post();
+        ?>
+        <div class="flex flex-col justify-between gap-4">
+            <div class="flex-1 flex flex-col gap-4">
+                <h3 class="text-2xl font-bold"><?php the_title(); ?></h3>
                 <div>
-                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
+                <?php the_excerpt(); ?>
                 </div>
             </div>
             <div>
-                <a href="">Continuar lendo…</a>
+                <a href="<?php the_permalink(); ?>">Continuar lendo…</a>
             </div>
         </div>
-        <div class="flex flex-col gap-4">
-            <div>
-                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
-                <div>
-                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
-                </div>
-            </div>
-            <div>
-                <a href="">Continuar lendo…</a>
-            </div>
-        </div>
-        <div class="flex flex-col gap-4">
-            <div>
-                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
-                <div>
-                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
-                </div>
-            </div>
-            <div>
-                <a href="">Continuar lendo…</a>
-            </div>
-        </div>
-        <div class="flex flex-col gap-4">
-            <div>
-                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
-                <div>
-                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
-                </div>
-            </div>
-            <div>
-                <a href="">Continuar lendo…</a>
-            </div>
-        </div>
-        <div class="flex flex-col gap-4">
-            <div>
-                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
-                <div>
-                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
-                </div>
-            </div>
-            <div>
-                <a href="">Continuar lendo…</a>
-            </div>
-        </div>
-        <div class="flex flex-col gap-4">
-            <div>
-                <h3 class="text-2xl font-bold"> Lorem Ipsum is simply dummy text</h3>
-                <div>
-                Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
-                </div>
-            </div>
-            <div>
-                <a href="">Continuar lendo…</a>
-            </div>
-        </div>
+        <?php
+        endwhile;
+        wp_reset_postdata();
+        ?>
     </div>
 </section>
-<section class="">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/03.png" alt="">
+<section class="px-20 py-18 flex items-center justify-between flex-col md:flex-row gap-6 bg-black">
+<div>
+    <p class="text-white">Endereço: Rua dos Ilhéus, n. 38, sala 1.204, Centro, <br /> Florianópolis/SC, CEP 88010-560</p>
+</div>
+<div class="flex w-1/2 items-center justify-between border-b border-white pb-6">
+   <div class="text-white text-xl">
+    heliogbrier@gmail.com
+   </div>
+   <div>
+    <a href="" class="flex gap-2 items-center h-14 bg-white rounded-full px-14">
+        <i class="fa fa-whatsapp text-xl"></i>
+        <span>Fale conosco</span>  
+    </a>
+   </div>
+</div>
 </section>
 <?php
 get_footer();

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./font-awesome.min.css" layer(base);
 
 body {
   background-color: #ded8cc;
