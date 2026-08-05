@@ -58,8 +58,36 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
     </div>
 </section>
 
-<section id="escritorio" class="bg-[#20341f] px-6 py-20 md:px-20 md:py-28">
-    <div class="mx-auto max-w-6xl">
+<section id="escritorio" class="relative overflow-hidden bg-[#20341f] px-6 py-20 md:px-20 md:py-28">
+    <svg class="pointer-events-none absolute inset-x-0 bottom-0 h-auto w-full" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="250" preserveAspectRatio="none" viewBox="0 0 1440 250" aria-hidden="true">
+        <g mask="url(&quot;#SvgjsMask1009&quot;)" fill="none">
+            <rect width="1440" height="250" x="0" y="0" fill="rgba(32, 52, 31, 1)"></rect>
+            <path d="M18 250L268 0L364 0L114 250z" fill="url(&quot;#SvgjsLinearGradient1010&quot;)"></path>
+            <path d="M243.60000000000002 250L493.6 0L739.6 0L489.6 250z" fill="url(&quot;#SvgjsLinearGradient1010&quot;)"></path>
+            <path d="M491.20000000000005 250L741.2 0L802.7 0L552.7 250z" fill="url(&quot;#SvgjsLinearGradient1010&quot;)"></path>
+            <path d="M720.8000000000001 250L970.8000000000001 0L1219.8000000000002 0L969.8000000000001 250z" fill="url(&quot;#SvgjsLinearGradient1010&quot;)"></path>
+            <path d="M1423 250L1173 0L948 0L1198 250z" fill="url(&quot;#SvgjsLinearGradient1011&quot;)"></path>
+            <path d="M1192.4 250L942.4000000000001 0L639.4000000000001 0L889.4000000000001 250z" fill="url(&quot;#SvgjsLinearGradient1011&quot;)"></path>
+            <path d="M917.8 250L667.8 0L346.79999999999995 0L596.8 250z" fill="url(&quot;#SvgjsLinearGradient1011&quot;)"></path>
+            <path d="M719.1999999999999 250L469.19999999999993 0L338.69999999999993 0L588.6999999999999 250z" fill="url(&quot;#SvgjsLinearGradient1011&quot;)"></path>
+            <path d="M1247.7190021029987 250L1440 57.719002102998815L1440 250z" fill="url(&quot;#SvgjsLinearGradient1010&quot;)"></path>
+            <path d="M0 250L192.28099789700119 250L 0 57.719002102998815z" fill="url(&quot;#SvgjsLinearGradient1011&quot;)"></path>
+        </g>
+        <defs>
+            <mask id="SvgjsMask1009">
+                <rect width="1440" height="250" fill="#ffffff"></rect>
+            </mask>
+            <linearGradient x1="0%" y1="100%" x2="100%" y2="0%" id="SvgjsLinearGradient1010">
+                <stop stop-color="rgba(26, 45, 25, 1)" offset="0"></stop>
+                <stop stop-opacity="0" stop-color="rgba(26, 45, 25, 1)" offset="0.66"></stop>
+            </linearGradient>
+            <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="SvgjsLinearGradient1011">
+                <stop stop-color="rgba(26, 45, 25, 1)" offset="0"></stop>
+                <stop stop-opacity="0" stop-color="rgba(26, 45, 25, 1)" offset="0.66"></stop>
+            </linearGradient>
+        </defs>
+    </svg>
+    <div class="relative z-10 mx-auto max-w-6xl">
         <div class="grid gap-16 md:grid-cols-[1fr_auto] md:items-start">
             <div class="flex flex-col gap-8">
                 <div class="flex items-center gap-3">

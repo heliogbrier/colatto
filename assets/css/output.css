@@ -199,11 +199,17 @@
   }
 }
 @layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
   .collapse {
     visibility: collapse;
   }
   .visible {
     visibility: visible;
+  }
+  .absolute {
+    position: absolute;
   }
   .relative {
     position: relative;
@@ -211,8 +217,17 @@
   .sticky {
     position: sticky;
   }
+  .inset-x-0 {
+    inset-inline: 0px;
+  }
   .top-0 {
     top: 0px;
+  }
+  .bottom-0 {
+    bottom: 0px;
+  }
+  .z-10 {
+    z-index: 10;
   }
   .z-50 {
     z-index: 50;
@@ -279,6 +294,9 @@
   }
   .h-14 {
     height: calc(var(--spacing) * 14);
+  }
+  .h-auto {
+    height: auto;
   }
   .h-full {
     height: 100%;
