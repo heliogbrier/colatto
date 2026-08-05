@@ -13,7 +13,7 @@
 <div class="">
     <?php $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a6824f]'; ?>
     <header id="site-header" class="sticky top-0 z-50 w-full bg-[#f7f4ee]/95 backdrop-blur-sm">
-        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-20 md:py-6">
+        <div id="site-header-bar" class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-20 md:py-6">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="shrink-0 rounded <?php echo $focus_ring; ?>">
                 <img class="h-10 w-auto md:h-12" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/colatto-advogados.png" alt="<?php bloginfo('name'); ?>">
             </a>

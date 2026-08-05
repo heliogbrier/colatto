@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initHeader() {
     var header = document.getElementById('site-header');
+    var headerBar = document.getElementById('site-header-bar');
     var toggle = document.getElementById('menu-toggle');
     var menu = document.getElementById('mobile-menu');
 
@@ -79,6 +80,16 @@ function initHeader() {
     }, { passive: true });
 
     updateScrollState();
+
+    if (headerBar) {
+        var updateHeaderOffset = function () {
+            document.documentElement.style.setProperty('--header-height', headerBar.offsetHeight + 'px');
+        };
+
+        updateHeaderOffset();
+        window.addEventListener('resize', updateHeaderOffset);
+        window.addEventListener('load', updateHeaderOffset);
+    }
 
     if (!toggle || !menu) {
         return;

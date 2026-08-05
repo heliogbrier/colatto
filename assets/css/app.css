@@ -44,6 +44,11 @@ body {
 }
 
 /* Header */
+html {
+  scroll-padding-top: var(--header-height, 96px);
+  scroll-behavior: smooth;
+}
+
 #site-header {
   box-shadow: 0 1px 0 rgba(32, 52, 31, 0);
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
@@ -137,6 +142,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   #mobile-menu,
   .hamburger span,
   #site-header {
