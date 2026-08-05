@@ -13,9 +13,13 @@ $advogados = [
 ];
 $advogado_foto = get_template_directory_uri() . '/assets/images/06.png';
 
-// Preencha com o número em formato internacional (ex.: '5548999999999') para
-// ativar os links diretos do WhatsApp. Enquanto vazio, os botões levam à seção de contato.
-$whatsapp_number  = '';
+// Número obtido das configurações institucionais (Configurações > Informações
+// Institucionais). Enquanto não houver telefone cadastrado, os botões levam à
+// seção de contato.
+$whatsapp_number = preg_replace('/\D/', '', theme_get_phone());
+if ($whatsapp_number && strpos($whatsapp_number, '55') !== 0) {
+    $whatsapp_number = '55' . $whatsapp_number;
+}
 $whatsapp_message = rawurlencode('Olá! Gostaria de falar com um advogado da Colatto Advogados.');
 $whatsapp_link    = $whatsapp_number ? 'https://wa.me/' . $whatsapp_number . '?text=' . $whatsapp_message : '#contato';
 
@@ -231,14 +235,14 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
         <div class="flex flex-col gap-6">
             <h2 class="font-display text-3xl font-light text-[#ded8cc] sm:text-4xl">Vamos conversar sobre o seu caso?</h2>
             <div class="flex flex-col gap-3 font-sans text-base text-[#ded8cc]/80">
-                <p>Rua dos Ilhéus, n. 38, sala 1.204, Centro<br>Florianópolis/SC, CEP 88010-560</p>
+                <p><?php echo wp_kses_post(theme_get_address()); ?></p>
                 <div class="flex items-center gap-2">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <a href="mailto:heliogbrier@gmail.com" class="w-fit transition hover:text-white <?php echo $focus_ring; ?>">heliogbrier@gmail.com</a>
+                    <a href="mailto:<?php echo esc_attr(theme_get_email()); ?>" class="w-fit transition hover:text-white <?php echo $focus_ring; ?>"><?php echo antispambot(theme_get_email()); ?></a>
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span>(48) 3028-0965</span>
+                    <span><?php echo esc_html(theme_get_phone()); ?></span>
                 </div>
             </div>
         </div>

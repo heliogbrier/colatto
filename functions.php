@@ -1,4 +1,6 @@
 <?php
+require_once get_template_directory() . '/inc/theme-settings.php';
+
 function colatto_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
