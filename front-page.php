@@ -29,8 +29,23 @@ $areas_count = $areas_atuacao->found_posts;
 
 $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a6824f]';
 ?>
-<section id="inicio" class="bg-[#f7f4ee] px-6 py-20 md:px-20 md:py-32">
-    <div class="mx-auto flex max-w-6xl flex-col gap-10">
+<section id="inicio" class="relative overflow-hidden bg-[#f7f4ee] px-6 py-20 md:px-20 md:py-32">
+    <svg class="pointer-events-none absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="560" preserveAspectRatio="none" viewBox="0 0 1440 560" aria-hidden="true">
+        <g mask="url(&quot;#SvgjsMask1006&quot;)" fill="none">
+            <rect width="1440" height="560" x="0" y="0" fill="rgba(247, 244, 238, 1)"></rect>
+            <path d="M396.61 569.83C542.68 567.93 655.24 406.66 955.38 398.84 1255.52 391.02 1359.29 136.91 1514.15 130.04" stroke="rgba(235, 228, 211, 1)" stroke-width="2"></path>
+            <path d="M681.4 625.67C785.19 600 726.12 333.83 979.41 318.94 1232.7 304.05 1420.24 147.09 1575.43 145.34" stroke="rgba(235, 228, 211, 1)" stroke-width="2"></path>
+            <path d="M239.85 619.39C366.05 616.07 472.9 434.03 709.48 433.81 946.07 433.59 944.3 503.81 1179.12 503.81 1413.93 503.81 1530.04 434 1648.75 433.81" stroke="rgba(235, 228, 211, 1)" stroke-width="2"></path>
+            <path d="M240.19 587.6C423.49 575.44 558.66 226.77 880.21 226.62 1201.76 226.47 1349.8 458.14 1520.23 461.82" stroke="rgba(235, 228, 211, 1)" stroke-width="2"></path>
+            <path d="M286.18 622C461.07 618.69 596.9 397.26 946.54 390.7 1296.19 384.14 1432.15 164.34 1606.91 161.1" stroke="rgba(235, 228, 211, 1)" stroke-width="2"></path>
+        </g>
+        <defs>
+            <mask id="SvgjsMask1006">
+                <rect width="1440" height="560" fill="#ffffff"></rect>
+            </mask>
+        </defs>
+    </svg>
+    <div class="relative z-10 mx-auto flex max-w-6xl flex-col gap-10">
         <div class="flex items-center gap-3 animate-fade-up">
             <span class="h-1.5 w-1.5 rotate-45 bg-[#a6824f]" aria-hidden="true"></span>
             <p class="font-sans text-xs font-semibold uppercase tracking-[0.28em] text-[#6b5636]">Colatto Advogados &middot; Desde <?php echo esc_html($founded_year); ?></p>
