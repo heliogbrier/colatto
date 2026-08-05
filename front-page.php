@@ -115,7 +115,7 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
                 </div>
                 <h2 class="font-display text-3xl font-light text-[#ded8cc] sm:text-5xl">O Escritório</h2>
                 <div class="flex max-w-2xl flex-col gap-5 font-sans text-base leading-relaxed text-[#ded8cc]/85 md:text-lg">
-                    <p>
+                    <p class="text-justify">
                     Inaugurado em 1990, o escritório Colatto Advogados tem o propósito de oferecer assessoria jurídica estratégica, pautada pela excelência técnica, ética profissional e atendimento personalizado. Nossa atuação é voltada à construção de soluções jurídicas seguras e eficazes, tanto na esfera judicial quanto na extrajudicial. 
                     </p>
                     <p>
@@ -123,7 +123,7 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
                     </p>
                 </div>
             </div>
-            <div class="bg-red-900 h-[400px] p-12 hidden select-none font-display text-[9rem] font-light leading-none text-[#ded8cc]/10 md:block" aria-hidden="true">
+            <div class="p-12 hidden select-none font-display text-[9rem] font-light leading-none text-[#ded8cc]/10 md:block" aria-hidden="true">
                 <img class="h-46 w-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>">
             </div>
         </div>
