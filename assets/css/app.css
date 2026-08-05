@@ -36,13 +36,6 @@ body {
   }
 }
 
-#atuacao {
-  background-image: url("../images/bg.png");
-  background-repeat: repeat;
-  background-position: right -120px;
-  background-size: 640px auto;
-}
-
 #contato {
   background-image: url("../images/bg.png");
   background-repeat: repeat;

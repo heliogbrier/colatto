@@ -458,11 +458,17 @@
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
   }
+  .px-20 {
+    padding-inline: calc(var(--spacing) * 20);
+  }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
   .py-7 {
     padding-block: calc(var(--spacing) * 7);
+  }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
   }
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
@@ -3002,12 +3008,6 @@ body {
   .animate-fade-up {
     animation: none;
   }
-}
-#atuacao {
-  background-image: url("../images/bg.png");
-  background-repeat: repeat;
-  background-position: right -120px;
-  background-size: 640px auto;
 }
 #contato {
   background-image: url("../images/bg.png");

@@ -42,7 +42,7 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
 
         <div class="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
             <p class="max-w-xl font-sans text-lg leading-relaxed text-[#3a4a37] md:text-xl animate-fade-up [animation-delay:200ms]">
-                Há mais de três décadas unimos rigor técnico, ética profissional e atendimento próximo para conduzir sua causa com segurança — da orientação preventiva ao litígio.
+                Há mais de três décadas unimos rigor técnico, ética profissional e atendimento próximo para conduzir sua causa com segurança e da orientação preventiva ao litígio.
             </p>
 
             <div class="flex w-full flex-col gap-4 sm:flex-row md:w-auto animate-fade-up [animation-delay:300ms]">

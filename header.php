@@ -11,11 +11,11 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div class="">
-    <div class="py-6">
-        <div class="flex justify-between items-center px-6">
+    <div id="header" class="px-20 py-12">
+        <div class="flex justify-between items-center">
             <div>
                 <a href="">
-                    <img class="w-40 h-auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="">
+                    <img class="w-40 h-auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/colatto-advogados.png" alt="">
                 </a>
             </div>
             <div>
