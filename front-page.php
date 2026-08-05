@@ -232,7 +232,14 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
             <h2 class="font-display text-3xl font-light text-[#ded8cc] sm:text-4xl">Vamos conversar sobre o seu caso?</h2>
             <div class="flex flex-col gap-3 font-sans text-base text-[#ded8cc]/80">
                 <p>Rua dos Ilhéus, n. 38, sala 1.204, Centro<br>Florianópolis/SC, CEP 88010-560</p>
-                <a href="mailto:heliogbrier@gmail.com" class="w-fit transition hover:text-white <?php echo $focus_ring; ?>">heliogbrier@gmail.com</a>
+                <div class="flex items-center gap-2">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:heliogbrier@gmail.com" class="w-fit transition hover:text-white <?php echo $focus_ring; ?>">heliogbrier@gmail.com</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>(48) 3028-0965</span>
+                </div>
             </div>
         </div>
         <a href="<?php echo esc_url($whatsapp_link); ?>" class="flex h-14 w-full items-center justify-center gap-2 rounded-full bg-[#ded8cc] px-10 text-base font-medium text-[#20341f] transition hover:bg-white <?php echo $focus_ring; ?> md:w-auto">
