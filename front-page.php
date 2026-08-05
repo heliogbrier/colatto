@@ -5,13 +5,17 @@
 
 get_header();
 
-$advogados = [
-    ['nome' => 'Ana Cláudia Colatto',   'oab' => 'OAB/SC 7.137'],
-    ['nome' => 'Ruthe Calado Schmitt',  'oab' => 'OAB/SC 61.848'],
-    ['nome' => 'Renato José Thiesen',   'oab' => 'OAB/SC 44.212'],
-    ['nome' => 'Maria Cláudia Colatto', 'oab' => 'OAB/SC 79.013'],
-];
-$advogado_foto = get_template_directory_uri() . '/assets/images/06.png';
+// Advogados listados automaticamente a partir dos posts da categoria
+// "Advogados" (slug: advogados). O nome vem do título do post, o registro
+// na OAB do resumo (campo "Resumo" do editor) e a foto da imagem destacada,
+// gerada no tamanho colatto-advogado (ver functions.php).
+$advogados_query = new WP_Query([
+    'category_name'  => 'advogados',
+    'posts_per_page' => -1,
+    'orderby'        => 'ID',
+    'order'          => 'ASC',
+]);
+$advogado_foto_padrao = get_template_directory_uri() . '/assets/images/placeholder.jpg';
 
 // Número obtido das configurações institucionais (Configurações > Informações
 // Institucionais). Enquanto não houver telefone cadastrado, os botões levam à
@@ -128,19 +132,30 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
             </div>
         </div>
 
+        <?php if ($advogados_query->have_posts()) : ?>
         <div id="advogados" class="mt-16 grid gap-px overflow-hidden rounded-2xl bg-[#ded8cc]/10 sm:grid-cols-2 md:mt-20 md:grid-cols-4">
-            <?php foreach ($advogados as $advogado) : ?>
+            <?php while ($advogados_query->have_posts()) : $advogados_query->the_post(); ?>
             <div class="flex flex-col bg-[#20341f]">
                 <div class="aspect-square overflow-hidden">
-                    <img src="<?php echo esc_url($advogado_foto); ?>" alt="<?php echo esc_attr($advogado['nome']); ?>" class="h-full w-full object-cover grayscale transition duration-500 hover:grayscale-0" loading="lazy" width="808" height="808">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('colatto-advogado', [
+                            'class'   => 'h-full w-full object-cover',
+                            'loading' => 'lazy',
+                            'alt'     => get_the_title(),
+                        ]); ?>
+                    <?php else : ?>
+                        <img src="<?php echo esc_url($advogado_foto_padrao); ?>" alt="<?php the_title_attribute(); ?>" class="h-full w-full object-cover" loading="lazy" width="808" height="808">
+                    <?php endif; ?>
                 </div>
                 <div class="flex flex-1 flex-col justify-center gap-1 px-6 py-6">
-                    <h3 class="font-display text-xl text-[#ded8cc]"><?php echo esc_html($advogado['nome']); ?></h3>
-                    <p class="font-sans text-sm text-[#ded8cc]/60"><?php echo esc_html($advogado['oab']); ?></p>
+                    <h3 class="font-display text-xl text-[#ded8cc]"><?php the_title(); ?></h3>
+                    <p class="font-sans text-sm text-[#ded8cc]/60"><?php echo esc_html(get_the_excerpt()); ?></p>
                 </div>
             </div>
-            <?php endforeach; ?>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
         </div>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -191,7 +206,7 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
     </div>
 </section>
 
-<section id="noticias" class="bg-white px-6 py-20 md:px-20 md:py-28">
+<section id="noticias" class="bg-white px-6 pt-20 pb-10 md:px-20 md:pt-28 md:pb-12">
     <div class="mx-auto max-w-6xl">
         <div class="flex flex-col items-center gap-4 text-center">
             <div class="flex items-center gap-3">
@@ -231,6 +246,9 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
         <p class="mt-14 text-center font-sans text-[#3a4a37]">Em breve, novidades por aqui.</p>
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>
+    </div>
+    <div class="flex justify-center py-20">
+        <a class="flex items-center justify-center border rounded-full py-4 px-12" href="">Todas notícias...</a>
     </div>
 </section>
 

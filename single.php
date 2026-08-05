@@ -63,7 +63,7 @@ while (have_posts()) :
     <?php if (has_post_thumbnail()) : ?>
     <div class="mx-auto -mt-2 max-w-4xl px-6 md:px-20">
         <div class="aspect-[16/9] overflow-hidden rounded-3xl bg-[#20341f]/5">
-            <?php the_post_thumbnail('large', ['class' => 'h-full w-full object-cover', 'loading' => 'eager']); ?>
+            <?php the_post_thumbnail('colatto-noticia-destaque', ['class' => 'h-full w-full object-cover', 'loading' => 'eager']); ?>
         </div>
     </div>
     <?php endif; ?>
