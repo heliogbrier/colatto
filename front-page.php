@@ -5,9 +5,6 @@
 
 get_header();
 
-$founded_year = 1990;
-$years_active = (int) current_time('Y') - $founded_year;
-
 $advogados = [
     ['nome' => 'Ana Cláudia Colatto',   'oab' => 'OAB/SC 7.137'],
     ['nome' => 'Ruthe Calado Schmitt',  'oab' => 'OAB/SC 61.848'],
@@ -96,7 +93,7 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
     </div>
 </section>
 
-<section id="atuacao" class="bg-[#f7f4ee] px-6 py-20 md:px-20 md:py-28">
+<section id="atuacao" class="bg-[#f7f4ee] px-6 py-20 md:px-20 md:py-28" >
     <div class="mx-auto max-w-6xl">
         <div class="flex flex-col gap-6 border-b border-[#20341f]/10 pb-10 md:flex-row md:items-end md:justify-between">
             <div class="flex max-w-xl flex-col gap-4">
@@ -166,7 +163,7 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
         <?php if ($noticias->have_posts()) : ?>
         <div class="mt-14 grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-3">
             <?php while ($noticias->have_posts()) : $noticias->the_post(); ?>
-            <article class="flex flex-col gap-4">
+            <article class="flex flex-col gap-4 justify-between">
                 <p class="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-[#a6824f]"><?php echo esc_html(get_the_date()); ?></p>
                 <h3 class="font-display text-2xl leading-snug text-[#20341f]">
                     <a href="<?php the_permalink(); ?>" class="transition hover:text-[#a6824f] <?php echo $focus_ring; ?>"><?php the_title(); ?></a>
@@ -186,7 +183,7 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
     </div>
 </section>
 
-<section id="contato" class="bg-[#20341f] px-6 py-20 md:px-20 md:py-24">
+<section id="contato" class="bg-[#4d5c4d] px-6 bg-repeat py-20 md:px-20 md:py-24 ">
     <div class="mx-auto flex max-w-6xl flex-col gap-12 md:flex-row md:items-end md:justify-between">
         <div class="flex flex-col gap-6">
             <h2 class="font-display text-3xl font-light text-[#ded8cc] sm:text-4xl">Vamos conversar sobre o seu caso?</h2>
