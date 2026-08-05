@@ -37,3 +37,5 @@ function colatto_enqueue_assets() {
 }
 
 add_action('wp_enqueue_scripts', 'colatto_enqueue_assets');
+
+add_filter('show_admin_bar', '__return_false'); 
