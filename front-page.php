@@ -52,7 +52,7 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
     <div class="relative z-10 mx-auto flex max-w-6xl flex-col gap-10">
         <div class="flex items-center gap-3 animate-fade-up">
             <span class="h-1.5 w-1.5 rotate-45 bg-[#a6824f]" aria-hidden="true"></span>
-            <p class="font-sans text-xs font-semibold uppercase tracking-[0.28em] text-[#6b5636]">Colatto Advogados &middot; Desde <?php echo esc_html($founded_year); ?></p>
+            <p class="font-sans text-xs font-semibold uppercase tracking-[0.28em] text-[#6b5636]">Colatto Advogados &middot; Desde 1990</p>
         </div>
 
         <h1 class="max-w-4xl font-display text-4xl font-light leading-[1.1] tracking-tight text-[#20341f] sm:text-6xl md:text-7xl animate-fade-up [animation-delay:100ms]">
@@ -115,12 +115,16 @@ $focus_ring = 'focus-visible:outline focus-visible:outline-2 focus-visible:outli
                 </div>
                 <h2 class="font-display text-3xl font-light text-[#ded8cc] sm:text-5xl">O Escritório</h2>
                 <div class="flex max-w-2xl flex-col gap-5 font-sans text-base leading-relaxed text-[#ded8cc]/85 md:text-lg">
-                    <p>Inaugurado em <?php echo esc_html($founded_year); ?>, o escritório Colatto Advogados tem o propósito de oferecer assessoria jurídica estratégica, pautada pela excelência técnica, ética profissional e atendimento personalizado. Nossa atuação é voltada à construção de soluções jurídicas seguras e eficazes, tanto na esfera judicial quanto na extrajudicial.</p>
-                    <p>Nossa equipe é formada por profissionais comprometidos com o constante aperfeiçoamento acadêmico, buscando atualização permanente por meio de cursos de especialização e estudos aprofundados nas diversas áreas do Direito — uma combinação entre conhecimento técnico e experiência prática que permite estratégias sólidas, ágeis e eficientes.</p>
+                    <p>
+                    Inaugurado em 1990, o escritório Colatto Advogados tem o propósito de oferecer assessoria jurídica estratégica, pautada pela excelência técnica, ética profissional e atendimento personalizado. Nossa atuação é voltada à construção de soluções jurídicas seguras e eficazes, tanto na esfera judicial quanto na extrajudicial. 
+                    </p>
+                    <p>
+                    Nossa equipe é formada por profissionais comprometidos com o constante aperfeiçoamento acadêmico e profissional, buscando atualização permanente por meio de cursos de especialização, capacitações e estudos aprofundados nas diversas áreas do Direito. Esta combinação entre conhecimento técnico e experiência prática permite a elaboração de estratégias sólidas, sem abrir mão da agilidade e da eficiência exigidas pelo ambiente jurídico contemporâneo. 
+                    </p>
                 </div>
             </div>
-            <div class="hidden select-none font-display text-[9rem] font-light leading-none text-[#ded8cc]/10 md:block" aria-hidden="true">
-                <?php echo esc_html($founded_year); ?>
+            <div class="bg-red-900 h-[400px] p-12 hidden select-none font-display text-[9rem] font-light leading-none text-[#ded8cc]/10 md:block" aria-hidden="true">
+                <img class="h-46 w-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>">
             </div>
         </div>
 
